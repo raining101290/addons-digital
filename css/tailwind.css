@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #000000; /* black - Executive authority */
+  --color-secondary: #FFFFFF; /* white - Clean canvas */
+  --color-accent: #00D4FF; /* cyan-400 - Strategic focus */
+  
+  /* Background Colors */
+  --color-background: #FAFAFA; /* gray-50 - Subtle warmth */
+  --color-surface: #F5F5F5; /* gray-100 - Card depth */
+  
+  /* Text Colors */
+  --color-text-primary: #1A1A1A; /* gray-900 - Professional tone */
+  --color-text-secondary: #666666; /* gray-500 - Clear hierarchy */
+  
+  /* Status Colors */
+  --color-success: #10B981; /* emerald-500 - Growth metrics */
+  --color-warning: #F59E0B; /* amber-500 - Important updates */
+  --color-error: #EF4444; /* red-500 - Clear guidance */
+  
+  /* Border Colors */
+  --color-border: #E5E5E5; /* gray-300 - Structural elements */
+  
+  /* Shadow Values */
+  --shadow-subtle: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --shadow-elevated: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  
+  /* Animation Timing */
+  --transition-fast: 300ms ease-out;
+  --transition-slow: 600ms ease-out;
+}
+
+@layer base {
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-primary font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:shadow-elevated hover:border-accent border border-transparent;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent text-primary border border-primary font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:bg-primary hover:text-secondary;
+  }
+  
+  .card {
+    @apply bg-surface rounded-lg p-6 shadow-subtle transition-all duration-300 hover:shadow-elevated;
+  }
+  
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-accent focus:ring-2 focus:ring-accent focus:ring-opacity-20 transition-all duration-300;
+  }
+  
+  .gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #8B5CF6 100%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .animation-reduce-motion {
+    @media (prefers-reduced-motion: reduce) {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+}
