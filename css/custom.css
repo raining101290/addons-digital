@@ -450,8 +450,8 @@ header.main-header .header-sticky.active{
 	left: 0;
 	right: 0;
 	border-radius: 0;
-    transform: translateY(0);
-	background: var(--dark-color);
+	transform: translateY(0);
+	background: rgba(15, 15, 15, 0.5); /* dark color with 50% opacity */
 	border-bottom: 1px solid var(--divider-color);
 	backdrop-filter: blur(30px);
 	-webkit-backdrop-filter: blur(30px);
@@ -656,7 +656,7 @@ body:has(.offcanvas){
 	height: 100% !important;
 	max-width: 375px;
 	border: none;
-	padding: 150px 37px 150px 30px;
+	padding: 50px 37px 50px 30px;
 	transform: translateX(100%) !important;
 	z-index: 101;
 	transition: all 0.3s ease-in-out !important;
@@ -670,7 +670,15 @@ body:has(.offcanvas){
 .navbar-expand-lg .offcanvas .offcanvas-body{
 	display: block;
 }
-
+.header-btn .offcanvas-body{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.offcanvas-body .header-contact-box:last-child{
+	border-bottom: none;
+}
 .header-btn .offcanvas .btn-close{
 	position: absolute;
 	top: 30px;
@@ -2026,16 +2034,24 @@ body:has(.offcanvas){
 
 .project-tag a{
 	display: block;
-	background-color: var(--divider-color);
+	background-color: var(--accent-color);
 	backdrop-filter: blur(20px);
 	-webkit-backdrop-filter: blur(20px);
-	color: var(--text-color);
+	color: var(--dark-color);
 	border-radius: 6px;
 	font-size: 14px;
 	text-transform: capitalize;
 	padding: 6px 15px;
 }
-
+.overlay{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
 .project-btn{
 	position: absolute;
 	top: 50%;
@@ -2425,7 +2441,7 @@ body:has(.offcanvas){
     position: absolute;
     right: -90px;
     top: 10%;
-    background: url(../images/agency-benefits-bg-shape.png) no-repeat;
+    background: url(../images/earth.png) no-repeat;
     background-position: left center;
     background-size: contain;
     opacity: 50%;

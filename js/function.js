@@ -34,6 +34,10 @@
 		prependTo : '.responsive-menu'
 	});
 
+	
+	$('#year').text(new Date().getFullYear());
+	
+	
 	if($("a[href='#top']").length){
 		$("a[href='#top']").click(function() {
 			$("html, body").animate({ scrollTop: 0 }, "slow");
